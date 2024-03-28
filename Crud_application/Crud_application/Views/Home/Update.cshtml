@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <h1 class="display-4 my-5 fw-bold text-center">Update Student Data</h1>
+        <div class="col-lg-6 mx-auto">
+            <!-- Form -->
+            @Model Students
+            <form method="post">
+
+                <div class="my-2">
+                    <input class="form-control" type="text" name="Name" value="@Model.Name" placeholder="Enter Student Name" />
+                </div>
+
+                <div class="my-2">
+                    <input class="form-control" type="number" name="Age" value="@Model.Age" placeholder="Enter Age" />
+                </div>
+
+                <div class="my-2">
+                    <input class="form-control" type="text" name="Education" value="@Model.Education" placeholder="Enter Education" />
+                </div>
+
+                <div class="my-2">
+                    <input class="form-control" type="text" name="Address" value="@Model.Address" placeholder="Enter Address" />
+                </div>
+
+                <div class="mt-2 mx-auto text-center">
+                    <input class="btn bg-primary w-50 form-control mx-auto" type="submit" value="Update Student" />
+                </div>
+
+            </form>
+            <!-- Form End -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@Model Students
+<div class="container">
+    <div class="row">
+        <h1 class="display-4 my-5 fw-bold text-center">View Students</h1>
+        <div class="col-lg-6 mx-auto">
+            <!-- Form -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Student Name</th>
+                        <th>Age</th>
+                        <th>Education</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var a in Model)
+                    {
+                        <tr>
+                            <td>@a.Id</td>
+                            <td>@a.Name</td>
+                            <td>@a.Age</td>
+                            <td>@a.Education</td>
+                            <td>@a.Address</td>
+
+                            <td>
+                                <a href="@Url.Action("Delete", "Home", new{ id = @a.Id })">Delete</a>
+                            </td>
+
+                            <td>
+                                <a href="@Url.Action("Update", "Home", new{ id = @a.Id })">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <!-- Form End -->
+        </div>
+    </div>
+</div>
+
